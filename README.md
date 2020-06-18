@@ -5,7 +5,7 @@
 The most important plugins I use are [coc.nvim](https://github.com/neoclide/coc.nvim)
 and [vim-clap](https://github.com/liuchengxu/vim-clap).
 
-### General Shortcuts
+### General Custom Shortcuts
 
 ```
 <C-K> <C-J> <C-H> <C-L> -> Resize pane of the terminal
@@ -13,10 +13,16 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 <space>v -> Open vertical terminal.
 <space>x -> Open horizontal terminal.
 <space>y -> Paste precedent yanked lines.
-<space>f -> Move between file inside the project and use:
-	C-V open file vertically.
-	C-X open file horizontally.
-	C-T open file in new tab.
+<space>f -> Move between files inside the project and use.
+<space>e -> Move between files inside the filesystem.
+```
+
+We can open the files inside vim-clap in various mode:
+
+```
+C-V -> Open file vertically.
+C-X -> Open file horizontally.
+C-T -> Open file in new tab.
 ```
 
 ### C/C++ Setup
