@@ -2,8 +2,8 @@
 
 ## Important plugins
 
-The most important plugins I use are [coc.nvim](https://github.com/neoclide/coc.nvim)
-and [vim-clap](https://github.com/liuchengxu/vim-clap).
+The most important plugins I use are [coc.nvim](https://github.com/neoclide/coc.nvim),
+[vim-clap](https://github.com/liuchengxu/vim-clap) and [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
 ### General custom shortcuts
 
@@ -24,9 +24,9 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 We can open the files inside vim-clap in various mode:
 
 ```
-C-V -> Open file vertically.
-C-X -> Open file horizontally.
-C-T -> Open file in new tab.
+<C-V> -> Open file vertically.
+<C-X> -> Open file horizontally.
+<C-T> -> Open file in new tab.
 ```
 
 #### Coc 
