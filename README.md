@@ -8,8 +8,8 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 ### General Custom Shortcuts
 
 ```
-<C-K> <C-J> <C-H> <C-L> -> Resize pane of the terminal
-<space>cc -> Open Coc Config file
+<C-K> <C-J> <C-H> <C-L> -> Resize panes.
+<space>cc -> Open Coc Config file.
 <space>v -> Open vertical terminal.
 <space>x -> Open horizontal terminal.
 <space>y -> Paste precedent yanked lines.
