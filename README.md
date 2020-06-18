@@ -33,8 +33,8 @@ C-T -> Open file in new tab.
 
 ```
 <space>cc -> Open Coc Config file.
-<leader>rn -> Rename variable (coc).
-<leader>f -> Format the file (coc).
+<leader>rn -> Rename variable.
+<leader>f -> Format the file.
 K -> open documentation of the function under the cursor.
 ```
 
