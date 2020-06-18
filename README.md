@@ -1,11 +1,11 @@
-# Neovim Config
+# Neovim config
 
 ## Important plugins
 
 The most important plugins I use are [coc.nvim](https://github.com/neoclide/coc.nvim)
 and [vim-clap](https://github.com/liuchengxu/vim-clap).
 
-### General Custom Shortcuts
+### General custom shortcuts
 
 ```
 <C-K> <C-J> <C-H> <C-L> -> Resize panes.
