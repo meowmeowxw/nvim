@@ -9,9 +9,13 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 
 ```
 <C-K> <C-J> <C-H> <C-L> -> Resize panes.
-<space>cc -> Open Coc Config file.
 <space>v -> Open vertical terminal.
 <space>x -> Open horizontal terminal.
+```
+
+#### Vim Clap
+
+```
 <space>y -> Paste precedent yanked lines.
 <space>f -> Move between files inside the project and use.
 <space>e -> Move between files inside the filesystem.
@@ -23,6 +27,15 @@ We can open the files inside vim-clap in various mode:
 C-V -> Open file vertically.
 C-X -> Open file horizontally.
 C-T -> Open file in new tab.
+```
+
+#### Coc 
+
+```
+<space>cc -> Open Coc Config file.
+<leader>rn -> Rename variable (coc).
+<leader>f -> Format the file (coc).
+K -> open documentation of the function under the cursor.
 ```
 
 ### C/C++ Setup
@@ -40,10 +53,7 @@ inside the source code with:
 
 With coc I recommend the coc-clangd extension, specifically with [Bear](https://github.com/rizsotto/Bear)
 to generate the `compile_commands.json`.
-In this way is possible to:
-
-1. `<leader>rn` -> rename the variables inside the file with local scope awareness.
-2. Intellisense and autocompletion
+In this way is possible to have the intellisense and autocompletion.
 
 ### Python
 
@@ -55,3 +65,4 @@ The keybindings I have are:
 3. <space>cps -> Run current visual selection in terminal.
 4. <space>cpl -> Enable/Disable linting.
 ```
+
