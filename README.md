@@ -9,9 +9,9 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 
 ```
 <C-K> <C-J> <C-H> <C-L> -> Resize pane of the terminal
+<space>cc -> Open Coc Config file
 <space>v -> Open vertical terminal.
 <space>x -> Open horizontal terminal.
-<space>cc -> Open Coc Config file
 <space>y -> Paste precedent yanked lines.
 <space>f -> Move between file inside the project and use:
 	C-V open file vertically.
@@ -25,9 +25,11 @@ I usually do `ctags -R .` inside the root of the project. In this way I can move
 inside the source code with:
 
 ```
-<space>t -> tags specific of the current file.
-<space>p -> tags of the whole project.
-<space>s -> select current block of code inside brackets.
+<space>t -> Show tags specific of the current file.
+<space>p -> Show tags of the whole project.
+<space>s -> Select with visual line of the code's current block inside brackets.
+<C-]> -> Open new buffer with the tag under the cursor.
+<C-T> -> Go back from the tag opened.
 ```
 
 With coc I recommend the coc-clangd extension, specifically with [Bear](https://github.com/rizsotto/Bear)
