@@ -12,11 +12,11 @@ and [vim-clap](https://github.com/liuchengxu/vim-clap).
 <space>v -> Open vertical terminal.
 <space>x -> Open horizontal terminal.
 <space>cc -> Open Coc Config file
-<space>y -> paste precedent yanked lines.
-<space>f -> move between file inside the project
-	* C-V open vertically.
-	* C-X open horizontally.
-	* C-T open in new tab.
+<space>y -> Paste precedent yanked lines.
+<space>f -> Move between file inside the project and use:
+	C-V open file vertically.
+	C-X open file horizontally.
+	C-T open file in new tab.
 ```
 
 ### C/C++ Setup
@@ -34,7 +34,7 @@ With coc I recommend the coc-clangd extension, specifically with [Bear](https://
 to generate the `compile_commands.json`.
 In this way is possible to:
 
-1. Rename the variables inside the file with local scope awareness using `<leader>rn`.
+1. `<leader>rn` -> rename the variables inside the file with local scope awareness.
 2. Intellisense and autocompletion
 
 ### Python
