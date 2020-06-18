@@ -1,5 +1,7 @@
 # Neovim config
 
+![](./nvim.png)
+
 ## Important plugins
 
 The most important plugins I use are [coc.nvim](https://github.com/neoclide/coc.nvim),
