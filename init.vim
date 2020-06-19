@@ -92,6 +92,10 @@ nmap <space>s $]}V[{
 nmap <space>S V[{
 nmap <space>- :split<CR>
 nmap <space>\ :vsplit<CR>
+nmap <space>wl <C-W>l
+nmap <space>wh <C-W>h
+nmap <space>wj <C-W>j
+nmap <space>wk <C-W>k
 nmap <space>cc :CocConfig<CR>
 nmap ]t :tabn<CR>
 nmap [t :tabp<CR>
