@@ -43,7 +43,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	set timeoutlen=600
 
 " Statusline
-Plug 'meowmeowxw/eleline.vim'
+ Plug 'meowmeowxw/eleline.vim'
 	let g:airline_powerline_fonts = 1
 
 " Colorschemes
@@ -56,6 +56,7 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'meowmeowxw/onedark.vim'
     let g:onedark_terminal_italics = 1
 Plug 'liuchengxu/space-vim-theme'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -96,7 +97,7 @@ nmap <space>wl <C-W>l
 nmap <space>wh <C-W>h
 nmap <space>wj <C-W>j
 nmap <space>wk <C-W>k
-nmap <space>cc :CocConfig<CR>
+nmap <space>cc :CocCommand<CR>
 nmap ]t :tabn<CR>
 nmap [t :tabp<CR>
 
@@ -137,7 +138,8 @@ function SemshiLight()
 endfunction
 
 function SemshiDark()
-    hi semshiAttribute guifg=#40f972
+    hi semshiAttribute guifg=#42cded
+	"hi semshiSelf guifg=#6bcdd6
     hi semshiSelected guifg=#c1c1c1 guibg=#333333
     hi semshiImported gui=bold
     hi semshiUnresolved guifg=#f25445 gui=bold
