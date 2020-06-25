@@ -90,8 +90,8 @@ nmap H i<CR><Esc>
 nmap gh ^
 nmap gl $
 nmap <F8> :Vista!!<CR>
-nmap <space>v :vsplit term://fish<CR>
-nmap <space>x :split term://fish<CR>
+nmap <space>v :vsplit term://$SHELL<CR>
+nmap <space>x :split term://$SHELL<CR>
 nmap <space>s $]}V[{
 nmap <space>S V[{
 nmap <space>- :split<CR>
