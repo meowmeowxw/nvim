@@ -86,6 +86,9 @@ set number relativenumber
 " Custom Shortcuts
 nmap D d$
 nmap Y y$
+nmap H i<CR><Esc>
+nmap gh ^
+nmap gl $
 nmap <F8> :Vista!!<CR>
 nmap <space>v :vsplit term://fish<CR>
 nmap <space>x :split term://fish<CR>
