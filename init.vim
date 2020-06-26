@@ -4,6 +4,7 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh'}
 Plug 'mhinz/vim-startify'
 	let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'},
 				\ {'f': '~/.config/fish/config.fish'},
+				\ {'t': '~/.config/kitty/kitty.conf'},
 				\ {'z': '~/.zshrc'}]
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
