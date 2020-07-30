@@ -45,17 +45,17 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " Statusline
 "Plug 'meowmeowxw/eleline.vim'
-"    let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 1
 Plug 'meowmeowxw/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'bufnr'],
 	  \				[ 'mode', 'paste' ],
       \             [ 'filetype', 'gitbranch', 'readonly', 'modified' ] ],
 	  \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileencoding', 'charvaluehex' ] ]
+      \              [ 'fileencoding' ] ]
 	  \},
       \ 'inactive': {
       \   'left': [ [ 'bufnr'],
@@ -67,9 +67,11 @@ let g:lightline = {
       \   'filetype': 'FileType',
       \ },
 	  \ 'component': {
-	  \   'readonly': '%{&readonly?" ":""}',
+	  \   'readonly': '%{&readonly?"":""}',
 	  \   'fileencoding' : '%{&fileencoding} %{WebDevIconsGetFileFormatSymbol()}'
 	  \ },
+	  \ 'separator': { 'left': '', 'right': '' },
+	  \ 'subseparator': { 'left': '', 'right': '' },
       \ 'mode_map': {
 	  \ 'n' : '<N>',
 	  \ 'i' : '<I>',
@@ -120,7 +122,7 @@ syntax on
 filetype plugin on
 set background=dark
 set termguicolors
-colorscheme space_vim_theme
+colorscheme onedark
 set hls!
 set laststatus=2
 set tabstop=4
