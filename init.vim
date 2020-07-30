@@ -36,6 +36,7 @@ Plug 'liuchengxu/vim-clap'
     map <space>w :Clap windows<CR>
     map <space>y :Clap yanks<CR>
     map <space>p :Clap proj_tags<CR>
+    autocmd User ClapOnExit call lightline#update()
 Plug 'rhysd/vim-grammarous'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'matze/vim-move'
