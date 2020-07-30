@@ -44,8 +44,46 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	set timeoutlen=600
 
 " Statusline
- Plug 'meowmeowxw/eleline.vim'
-	let g:airline_powerline_fonts = 1
+"Plug 'meowmeowxw/eleline.vim'
+"    let g:airline_powerline_fonts = 1
+Plug 'meowmeowxw/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'bufnr'],
+	  \				[ 'mode', 'paste' ],
+      \             [ 'filetype', 'gitbranch', 'readonly', 'modified' ] ],
+	  \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileencoding', 'charvaluehex' ] ]
+	  \},
+      \ 'inactive': {
+      \   'left': [ [ 'bufnr'],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+	  \	  'bufnr': 'BufNr',
+      \   'gitbranch': 'GitBranch',
+      \   'filetype': 'FileType',
+      \ },
+	  \ 'component': {
+	  \   'readonly': '%{&readonly?" ":""}',
+	  \   'fileencoding' : '%{&fileencoding} %{WebDevIconsGetFileFormatSymbol()}'
+	  \ },
+      \ 'mode_map': {
+	  \ 'n' : '<N>',
+	  \ 'i' : '<I>',
+	  \ 'R' : '<R>',
+	  \ 'v' : '<V>',
+	  \ 'V' : '<Vl>',
+	  \ "\<C-v>": '<Vb>',
+	  \ 'c' : '<C>',
+	  \ 's' : '<S>',
+	  \ 'S' : '<Sl>',
+	  \ "\<C-s>": '<Sb>',
+	  \ 't': '<T>',
+	  \ },
+      \ }
 
 " Colorschemes
 Plug 'sainnhe/sonokai'
@@ -61,12 +99,28 @@ Plug 'rakr/vim-one'
 
 call plug#end()
 
+function! BufNr() abort
+  let l:bufnr = bufnr('%')
+  let l:bufnr = l:bufnr > 20 ? l:bufnr : nr2char(9311 + l:bufnr).' '
+  return '  '.l:bufnr."  ".winnr().' '
+endfunction
+
+function! FileType() abort
+	let l:f = WebDevIconsGetFileTypeSymbol()
+	return ''.expand('%:p:t').' '.l:f.''
+endfunction
+
+function! GitBranch() abort
+	let l:branch = FugitiveHead()
+	return l:branch.'  '
+endfunction
+
 " Nvim behaviour
 syntax on
 filetype plugin on
 set background=dark
 set termguicolors
-colorscheme onedark
+colorscheme space_vim_theme
 set hls!
 set laststatus=2
 set tabstop=4
@@ -95,7 +149,8 @@ nmap <space>i m1gg=G'1
 nmap <space>v :vsplit term://$SHELL<CR>
 nmap <space>x :split term://$SHELL<CR>
 nmap <space>s $]}V[{
-nmap <space>S V[{
+nmap <space>S ^V[{
+nmap <space>ss :Startify<CR>
 nmap <space>- :split<CR>
 nmap <space>\ :vsplit<CR>
 nmap <space>wl <C-W>l
@@ -127,6 +182,13 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
+
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
 "
 " Adjusts colors in semshi for python
 function SemshiLight()
@@ -223,7 +285,6 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -232,6 +293,7 @@ nmap <silent> gr <Plug>(coc-references)
 augroup documentation_mapping
     autocmd!
     autocmd FileType python,java,js nnoremap <silent> K :call <SID>show_documentation()<CR>
+	autocmd Filetype python,java,js nmap <silent> gd <Plug>(coc-definition)
 augroup END
 
 function! s:show_documentation()
