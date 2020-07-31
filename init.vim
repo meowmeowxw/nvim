@@ -114,8 +114,8 @@ function! FileType() abort
 endfunction
 
 function! GitBranch() abort
-	let l:branch = FugitiveHead()
-	return l:branch.'  '
+	let _ = FugitiveHead()
+	return strlen(_) ? _.'  ' : ''
 endfunction
 
 " Nvim behaviour
@@ -186,11 +186,11 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
-augroup CursorLineOnlyInActiveWindow
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-augroup END
+"augroup CursorLineOnlyInActiveWindow
+"  autocmd!
+"  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"  autocmd WinLeave * setlocal nocursorline
+"augroup END
 
 "
 " Adjusts colors in semshi for python
