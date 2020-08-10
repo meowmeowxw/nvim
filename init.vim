@@ -71,7 +71,7 @@ let g:lightline = {
 	  \   'readonly': '%{&readonly?"":""}',
 	  \   'fileencoding' : '%{&fileencoding} %{WebDevIconsGetFileFormatSymbol()}'
 	  \ },
-	  \ 'separator': { 'left': '', 'right': '' },
+	  \ 'separator': { 'left': '', 'right': '' },
 	  \ 'subseparator': { 'left': '', 'right': '' },
       \ 'mode_map': {
 	  \ 'n' : '<N>',

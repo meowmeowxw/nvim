@@ -3,5 +3,6 @@
   "java.format.settings.url": "/home/meowmeow/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/home/meowmeow/.local/bin/black",
+  "python.formatting.blackArgs": ["-l", "110"],
   "coc.preferences.formatOnSaveFiletypes": ["python"]
 }
