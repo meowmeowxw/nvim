@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'neoclide/coc.nvim', {'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
 	let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'},
 				\ {'f': '~/.config/fish/config.fish'},
@@ -14,7 +14,7 @@ Plug 'scrooloose/nerdtree'
                 \ exe 'cd '.argv()[0] | endif
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && 
                 \ b:NERDTree.isTabTree()) | q | endif
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'liuchengxu/vista.vim'
 	let g:vista#renderer#enable_icon = 0
 Plug 'tpope/vim-fugitive'
@@ -95,7 +95,7 @@ Plug 'sainnhe/edge'
 	let g:edge_style = 'neon'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
     let g:gruvbox_material_background = 'medium'
-Plug 'meowmeowxw/onedark.vim'
+Plug 'joshdick/onedark.vim'
     let g:onedark_terminal_italics = 1
 Plug 'liuchengxu/space-vim-theme'
 Plug 'rakr/vim-one'
