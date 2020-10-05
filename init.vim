@@ -99,13 +99,16 @@ Plug 'joshdick/onedark.vim'
     let g:onedark_terminal_italics = 1
 Plug 'liuchengxu/space-vim-theme'
 Plug 'rakr/vim-one'
+Plug 'rhysd/vim-grammarous'
+Plug 'lervag/vimtex'
+"Plug 'tpope/vim-sleuth'
 
 call plug#end()
 
 function! BufNr() abort
-  let l:bufnr = bufnr('%')
-  let l:bufnr = l:bufnr > 20 ? l:bufnr : nr2char(9311 + l:bufnr).' '
-  return '  '.l:bufnr."  ".winnr().' '
+	let l:bufnr = bufnr('%')
+	let l:bufnr = l:bufnr > 20 ? l:bufnr : nr2char(9311 + l:bufnr).' '
+	return '  '.l:bufnr."  ".winnr().' '
 endfunction
 
 function! FileType() abort
