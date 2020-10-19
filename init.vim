@@ -21,11 +21,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'petRUShka/vim-sage'
 Plug 'daeyun/vim-matlab'
 Plug 'rhysd/vim-grammarous'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vim-clap'
     map <space>b :Clap buffers<CR>
-    map <space>c :Clap colors<CR>
     map <space>e :Clap filer<CR>
     map <space>f :Clap files<CR>
     map <space>g :Clap grep<CR>
@@ -97,10 +97,19 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
     let g:gruvbox_material_background = 'medium'
 Plug 'joshdick/onedark.vim'
     let g:onedark_terminal_italics = 1
+Plug 'ayu-theme/ayu-vim' " or other package manager
+	let ayucolor="mirage" " for mirage version of theme
 Plug 'liuchengxu/space-vim-theme'
 Plug 'rakr/vim-one'
 Plug 'rhysd/vim-grammarous'
 Plug 'lervag/vimtex'
+	let g:tex_flavor = 'latex'
+Plug 'preservim/nerdcommenter'
+	let g:NERDSpaceDelims = 1
+	let g:NERDCompactSexyComs = 1
+	let g:NERDDefaultAlign = 'left'
+	map <space>c <leader>c<space>
+
 "Plug 'tpope/vim-sleuth'
 
 call plug#end()
@@ -388,3 +397,11 @@ nnoremap <silent> <space>cp  :<C-u>CocListResume<CR>
 " Automatic new line when enter is pressed after brackets
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+lua <<EOF
+	require'nvim-treesitter.configs'.setup {
+	  ensure_installed = "all",     -- one of "all", "language", or a list of languages
+	  highlight = {
+		enable = true              -- false will disable the whole extension
+	  },
+	}
+EOF
