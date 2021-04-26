@@ -184,6 +184,8 @@ map <C-H> :5winc ><CR>
 map <C-L> :5winc <<CR>
 map <A-M> :%norm.<CR>
 
+vmap s y:let @/ = @"<CR>
+
 nnoremap <Leader>c :set cursorline!<CR>
 nnoremap <Leader>r :g/^\s*$/d<CR>
 nnoremap <Leader>k :Man<CR>
