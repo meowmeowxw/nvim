@@ -46,47 +46,47 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " Statusline
 "Plug 'meowmeowxw/eleline.vim'
-    let g:airline_powerline_fonts = 1
+    "let g:airline_powerline_fonts = 1
 Plug 'meowmeowxw/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'deus',
-      \ 'active': {
-      \   'left': [ [ 'bufnr'],
-	  \				[ 'mode', 'paste' ],
-      \             [ 'filetype', 'gitbranch', 'readonly', 'modified' ] ],
-	  \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileencoding' ] ]
-	  \},
-      \ 'inactive': {
-      \   'left': [ [ 'bufnr'],
-      \             [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-	  \	  'bufnr': 'BufNr',
-      \   'gitbranch': 'GitBranch',
-      \   'filetype': 'FileType',
-      \ },
-	  \ 'component': {
-	  \   'readonly': '%{&readonly?"":""}',
-	  \   'fileencoding' : '%{&fileencoding} %{WebDevIconsGetFileFormatSymbol()}'
-	  \ },
-	  \ 'separator': { 'left': '', 'right': '' },
-	  \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'mode_map': {
-	  \ 'n' : '<N>',
-	  \ 'i' : '<I>',
-	  \ 'R' : '<R>',
-	  \ 'v' : '<V>',
-	  \ 'V' : '<Vl>',
-	  \ "\<C-v>": '<Vb>',
-	  \ 'c' : '<C>',
-	  \ 's' : '<S>',
-	  \ 'S' : '<Sl>',
-	  \ "\<C-s>": '<Sb>',
-	  \ 't': '<T>',
-	  \ },
-      \ }
+    \ 'colorscheme': 'deus',
+    \ 'active': {
+    \   'left': [ [ 'bufnr' ],
+    \           [ 'mode', 'paste' ],
+    \           [ 'filetype', 'gitbranch', 'readonly', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ],
+    \            [ 'fileencoding' ] ]
+    \},
+    \ 'inactive': {
+    \   'left': [ [ 'bufnr' ],
+    \             [ 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \	  'bufnr': 'BufNr',
+    \   'gitbranch': 'GitBranch',
+    \   'filetype': 'FileType',
+    \ },
+    \ 'component': {
+    \   'readonly': '%{&readonly?"":""}',
+    \   'fileencoding' : '%{&fileencoding} %{WebDevIconsGetFileFormatSymbol()}'
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' },
+    \ 'mode_map': {
+    \ 'n' : '<N>',
+    \ 'i' : '<I>',
+    \ 'R' : '<R>',
+    \ 'v' : '<V>',
+    \ 'V' : '<Vl>',
+    \ "\<C-v>": '<Vb>',
+    \ 'c' : '<C>',
+    \ 's' : '<S>',
+    \ 'S' : '<Sl>',
+    \ "\<C-s>": '<Sb>',
+    \ 't': '<T>',
+    \ },
+\ }
 
 " Colorschemes
 Plug 'sainnhe/sonokai'
@@ -109,8 +109,10 @@ Plug 'preservim/nerdcommenter'
 	let g:NERDCompactSexyComs = 1
 	let g:NERDDefaultAlign = 'left'
 	map <space>c <leader>c<space>
-
 "Plug 'tpope/vim-sleuth'
+Plug 'georgewitteman/vim-fish'
+Plug 'petRUShka/vim-sage'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
@@ -142,7 +144,7 @@ set tabstop=4
 set smartindent
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 set number
 set splitbelow
 set splitright
@@ -235,7 +237,8 @@ elseif &background ==# 'dark'
 endif
 "
 " Template for different files type
-autocmd BufNewFile *.c r $HOME/.config/nvim/templates/t.c
+autocmd BufNewFile *.c 0r $HOME/.config/nvim/templates/t.c
+autocmd BufNewFile *.py 0r $HOME/.config/nvim/templates/t.py
 "
 " CoC config
 let g:coc_global_extensions = [
@@ -307,8 +310,8 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 augroup documentation_mapping
     autocmd!
-    autocmd FileType python,java,js nnoremap <silent> K :call <SID>show_documentation()<CR>
-	autocmd Filetype python,java,js nmap <silent> gd <Plug>(coc-definition)
+    autocmd FileType python,java,js,php nnoremap <silent> K :call <SID>show_documentation()<CR>
+    autocmd Filetype python,java,js,php nmap <silent> gd <Plug>(coc-definition)
 augroup END
 
 function! s:show_documentation()
