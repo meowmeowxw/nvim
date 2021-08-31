@@ -24,19 +24,29 @@ Plug 'rhysd/vim-grammarous'
 "Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+    map <space>b :Buffers<CR>
+    map <space>f :GFiles<CR>
+    map <space>m :Marks<CR>
+    map <space>l :Lines<CR>
+    map <space>g :Rg<CR>
+    map <space>t :BTags<CR>
+    map <space>p :Tags<CR>
 Plug 'liuchengxu/vim-clap'
-    map <space>b :Clap buffers<CR>
+    "map <space>b :Clap buffers<CR>
     map <space>e :Clap filer<CR>
-    map <space>f :Clap files<CR>
-    map <space>g :Clap grep<CR>
+    "map <space>f :Clap files<CR>
+    "map <space>g :Clap grep<CR>
     map <space>j :Clap jumps<CR>
-    map <space>m :Clap marks<CR>
-    map <space>p :Clap providers<CR>
-    map <space>t :Clap tags<CR>
+    "map <space>m :Clap marks<CR>
+    "map <space>t :Clap tags<CR>
     map <space>w :Clap windows<CR>
     map <space>y :Clap yanks<CR>
-    map <space>p :Clap proj_tags<CR>
+    "map <space>p :Clap proj_tags<CR>
     autocmd User ClapOnExit call lightline#update()
+Plug 'phaazon/hop.nvim'
+    nnoremap <space>h  :HopWord<CR>
 Plug 'rhysd/vim-grammarous'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'matze/vim-move'
@@ -49,7 +59,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     "let g:airline_powerline_fonts = 1
 Plug 'meowmeowxw/lightline.vim'
 let g:lightline = {
-    \ 'colorscheme': 'deus',
+    \ 'colorscheme': 'seoul256',
     \ 'active': {
     \   'left': [ [ 'bufnr' ],
     \           [ 'mode', 'paste' ],
@@ -137,7 +147,7 @@ syntax on
 filetype plugin on
 set background=dark
 set termguicolors
-colorscheme onedark
+colorscheme gruvbox-material
 set hls!
 set laststatus=2
 set tabstop=4
@@ -312,8 +322,8 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 augroup documentation_mapping
     autocmd!
-    autocmd FileType python,java,js,php nnoremap <silent> K :call <SID>show_documentation()<CR>
-    autocmd Filetype python,java,js,php nmap <silent> gd <Plug>(coc-definition)
+    autocmd FileType python,java,js,php,rust nnoremap <silent> K :call <SID>show_documentation()<CR>
+    autocmd Filetype python,java,js,php,rust nmap <silent> gd <Plug>(coc-definition)
 augroup END
 
 function! s:show_documentation()
